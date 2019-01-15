@@ -1,0 +1,19 @@
+.link-primary {
+    color: $brand-primary;
+    text-decoration: underline;
+    @include transition(color, 0.2, ease);
+    cursor: pointer;
+
+    @include haf {
+        color: $brand-danger;
+        text-decoration: underline;
+    }
+}
+
+.clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

@@ -1,0 +1,326 @@
+/* style for story */
+
+.story {
+    @include clearfix;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s linear !important;
+    margin-bottom: 8px;
+    &+.story {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__thumb {
+        overflow: hidden;
+        img {
+            @include transition(all, 0.2, linear);
+        }
+    }
+    &__header {
+        margin-top: 8px;
+        .story--horizontal & {
+            margin-top: 0;
+        }
+    }
+    &__footer {
+        margin-top: 8px;
+    }
+    &__relate {
+        padding-left: 12px;
+        position: relative;
+        display: block;
+        &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: $brand-primary;
+        }
+    }
+    &__title {
+        font-size: 14px;
+        line-height: 1.4em;
+        font-weight: normal;
+        a {
+            &:visited {
+                // color: #888;
+                &:hover {
+                    color: $brand-primary;
+                }
+            }
+            .area--dark & {
+                color: white;
+                &:hover {
+                    color: #ddd;
+                }
+            }
+        }
+    }
+    &__meta {
+        font-size: 12px;
+        line-height: 1.4em;
+        margin-top: 4px;
+        color: #999;
+    }
+    &__summary {
+        color: #777777;
+        margin-top: 8px;
+        display: none;
+        @include breakpoint(md) {
+            display: block;
+        }
+    }
+    &__time {
+        color: #999;
+    }
+    &__author {
+        font-weight: bold;
+        color: #333;
+        margin-right: 4px;
+    }
+    &--bold {
+        .story__title {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1.4em;
+        }
+    }
+    &--horizontal {
+        .story__thumb {
+            float: left;
+            margin-right: 12px;
+        }
+        .story__header {
+            overflow: hidden;
+            padding: 0;
+        }
+        .story__title {
+            margin-bottom: 0;
+        }
+        .story__meta {
+            font-size: 12px;
+            margin-top: 8px;
+        }
+    }
+    &--event {
+        position: relative;
+        .story__thumb {
+            max-height: 100px;
+            a {
+                &::before {
+                    content: '';
+                    display: block;
+                    background-color: black;
+                    opacity: 0.6;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    transition: all 0.2s linear;
+                }
+                &::after {
+                    content: '';
+                    display: block;
+                    background-color: white;
+                    opacity: 0;
+                    position: absolute;
+                    top: 10px;
+                    bottom: 10px;
+                    right: 10px;
+                    left: 10px;
+                    transition: all 0.2s linear;
+                }
+            }
+        }
+        .story__header {
+            margin-top: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            text-align: center;
+        }
+        .story__title {
+            font-family: $font-family-special;
+            font-size: 16px;
+            text-transform: uppercase;
+            a {
+                color: white;
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+        &:hover {
+            .story__thumb {
+                a {
+                    &::before {
+                        opacity: 0.8;
+                    }
+                    &::after {
+                        opacity: 0.2;
+                    }
+                }
+            }
+        }
+    }
+    &--highlight {
+        .story__title {
+            font-size: 20px;
+            line-height: 1.4em;
+            font-weight: bold;
+        }
+    }
+    &+.story--border {
+        border-top: 1px solid #eee;
+        padding-top: 6px;
+        .story__header {
+            margin-top: 4px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &--featured {
+        .area--dark & {
+            .story__thumb {
+                a {
+                    position: relative;
+                    display: block;
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 56px;
+                        height: 56px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        margin-left: -28px;
+                        margin-top: -28px;
+                        background-image: url(../img/sprites.svg);
+                        background-position: -100px 0;
+                    }
+                }
+            }
+        }
+        .story__title {
+            font-size: 20px;
+            line-height: 1.4em;
+            font-weight: bold;
+        }
+    }
+    &--center {
+        .story__thumb {
+            img {
+                max-width: 64px;
+                display: inline-block;
+                border-radius: 50%;
+            }
+        }
+        .story__thumb,
+        .story__title,
+        .story__summary {
+            text-align: center;
+        }
+        .story__summary {
+            @include breakpoint(xs) {
+                display: block;
+            }
+        }
+    }
+    &--circle {
+        .story__thumb {
+            @include breakpoint(sm) {
+                max-width: 64px;
+            }
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+    &--gif {
+        &.story--horizontal {
+            .story__thumb {
+                width: 80px;
+                a {
+                    padding-bottom: 75%;
+                    background-color: #eee;
+                }
+            }
+        }
+        .story__thumb {
+            a {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                padding-bottom: 56.25%;
+                background-color: #f0f0f0;
+                img {
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            #listing-zone-ajax & {
+                width: 112px;
+                @include breakpoint(md) {
+                    width: 210px;
+                }
+            }
+        }
+    }
+    &.is-playing {
+        .story__thumb {
+            position: relative;
+            &::after {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: black;
+                opacity: 0.3;
+            }
+            img {
+                filter: blur(2px);
+            }
+        }
+        .story__title {
+            &::before {
+                content: 'Đang phát';
+                display: inline;
+                font-size: 0.7em;
+                padding: 2px 6px;
+                margin-right: 4px;
+                border-radius: 2px;
+                color: white;
+                background-color: $brand-primary
+            }
+        }
+    }
+    #listing-zone-ajax & {
+        .story__thumb {
+            @include breakpoint(xs) {
+                width: 120px;
+            }
+        }
+        .story__title {
+            @include breakpoint(xs) {
+                font-weight: normal;
+                font-size: 14px;
+            }
+        }
+    }
+}

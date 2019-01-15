@@ -1,0 +1,46 @@
+/* ====================================
+   Customize Pagination
+   ==================================== */
+
+.pagination {
+    margin-top: 0;
+    @include clearfix;
+    display: block;
+    margin-top: 15px;
+
+    li {
+        display: inline-block;
+
+        >a {
+            background-color: white;
+            border: none;
+            @include transition(all, 0.2, linear);
+            padding: 0;
+            text-align: center;
+            opacity: 0.5;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
+        &.active,
+        &:hover {
+            >a {
+                font-weight: bold;
+                background-color: transparent;
+                color: black;
+                opacity: 1;
+
+                &:hover {
+                    background-color: transparent;
+                    color: black;
+                }
+            }
+        }
+
+        &+li {
+            margin-left: 5px;
+        }
+    }
+}

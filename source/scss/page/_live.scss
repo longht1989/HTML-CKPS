@@ -1,0 +1,210 @@
+/* ====================================
+   Live article 's style
+   ==================================== */
+
+.event {
+    &-wrap {
+        @include clearfix;
+        margin-bottom: 16px;
+    }
+    &__item {
+        padding-left: 32px;
+        padding-top: 12px;
+        &+.event__item {
+            margin-top: 16px;
+            border-top: 1px solid #ddd;
+        }
+    }
+    &__header {
+        margin-bottom: 12px;
+    }
+    &__time {
+        display: block;
+        color: #999;
+        font-size: 14px;
+        line-height: 1.4em;
+        position: relative;
+        margin-bottom: 8px;
+        &::before {
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: $brand-primary;
+            position: absolute;
+            top: 50%;
+            left: -32px;
+            opacity: 0.2;
+            transform: translate(0%, -50%);
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $brand-primary;
+            position: absolute;
+            top: 50%;
+            left: -28px;
+            transform: translate(0%, -50%);
+        }
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 1.4em;
+        margin-bottom: 0;
+    }
+}
+
+.live {
+    .cast {
+        background: #f7f7f7 url(../img/livestream/cast.png) 0 0 no-repeat;
+        padding: 10px 10px 10px 80px;
+        border: 1px solid #ddd;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+}
+
+// Question Answer article 
+// --------------------------------------------------
+.stream-meta {
+    margin: 8px 0 16px;
+    &>div:last-child {
+        width: 70%;
+        float: right;
+        border-left: 1px solid $gray-lighter;
+        padding-left: 10px;
+        .sapo {
+            font-weight: normal;
+        }
+        .guest {
+            article {
+                margin-bottom: 15px !important;
+                figure {
+                    height: 180px;
+                }
+                header {
+                    h1 {
+                        font-weight: bold;
+                        font-size: 14px;
+                        margin-bottom: 5px;
+                    }
+                    summary {
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+    .time-location {
+        padding-right: 10px;
+        width: 30%;
+        float: left;
+        div {
+            margin-bottom: 10px;
+            border-bottom: 1px solid $gray-lighter;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            &:last-child {
+                border-bottom: none;
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+            }
+            span {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 12px;
+                color: #ccc;
+                display: block;
+                margin-bottom: 5px;
+            }
+            time,
+            address {
+                font-weight: bold;
+                font-size: 14px;
+            }
+        }
+    }
+    .guest {
+        .story {
+            margin-bottom: 16px;
+            .title {
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.timer {
+    border-top: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+    font-style: italic;
+    padding: 10px;
+    text-align: center;
+    span {
+        color: $link-hover-color;
+        display: inline-block;
+        padding: 0 5px;
+    }
+}
+
+ul.stream {
+    margin-bottom: 20px;
+    li {
+        padding: 20px 0 20px 0px;
+        margin-left: 120px;
+        border-bottom: 1px solid $gray-lighter;
+        .question {
+            position: relative;
+            &>p.author {
+                font-size: 13px;
+                color: #777;
+                margin-bottom: 5px;
+                text-align: left;
+                span {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color: #333;
+                    display: inline-block;
+                    padding: 0 5px;
+                }
+            }
+            time {
+                position: absolute;
+                right: 0;
+                font-size: 12px;
+                font-weight: bold;
+                color: #777;
+            }
+            .mini-content {
+                font-weight: bold;
+            }
+        }
+        .answer {
+            margin: 15px 0 0;
+            border-left: 1px solid $gray-lighter;
+            margin-left: 50px;
+            padding-left: 20px;
+            .author {
+                font-weight: bold;
+                margin-bottom: 5px;
+                text-align: left;
+            }
+            .mini-content {
+                .linebreak {
+                    display: table;
+                    padding-bottom: 10px;
+                    clear: both;
+                }
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
