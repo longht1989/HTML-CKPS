@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>Chung Khoan Phai Sinh - Login</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../App_Themes/img/favicon.ico">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="../App_Themes/css/ckps.min.css">
+    <!-- JS modernizr + Jquery + Components JS-->
+    <script src="../Jscripts/ckps.min.js"></script>
+</head>
+
+<body>
+    <!-- site background -->
+    <div id="mask"></div>
+    <!-- site content -->
+    <main id="site-content" class="site-content site-login">
+        <section class="zone zone--login">
+            <div class="zone__header">
+                <h3 class="zone__title"><img src="../App_Themes/img/logo.png" alt="" class="img-responsive"></h3>
+            </div>
+            <div class="zone__content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-4"><label for="exampleInputName4">Tên đăng nhập</label></div>
+                            <div class="col-xs-8">
+                                <input id="exampleInputName4" type="txt" class="form-control" placeholder="Tên đăng nhập">
+                                <p class="text-danger">* Tên đăng nhập chưa chính xác</p>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-xs-4"><label for="exampleInputName5">Mật khẩu</label></div>
+                            <div class="col-xs-8">
+                                <input id="exampleInputName5" type="password" class="form-control" placeholder="Mật khẩu">
+                                <p class="text-danger">* Mật khẩu chưa chính xác</p>
+                            </div>
+                        </div>
+                        <p class="text-right"><a href="#" class="link-primary">Quên mật khẩu</a></p>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-12 center-block text-center">
+                                <p><img src="fig-image/capcha.png" alt="" class="img-responsive center-block"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="text-center">
+                                <a href="" class="btn btn-warning">Đăng nhập</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- .End site content -->
+    <!-- JS Global Customise -->
+    <script src="../Jscripts/custom.js"></script>
+    <script type="text/javascript">
+    var images = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg'];
+    $('#mask').css({ 'background-image': 'url(../App_Themes/img/' + images[Math.floor(Math.random() * images.length)] + ')' });
+    </script>
+    <!-- Js Dev plugin -->
+    <!--[if lt IE 9]>
+        <script src="../Jscripts/vendor/respond.js "></script>
+    <![endif]-->
+</body>
+
+</html>
