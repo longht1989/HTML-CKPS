@@ -8,22 +8,33 @@
 }
 
 .site-footer {
-    background: #fff;
+    position: relative;
+    background: #efefef;
     padding: 16px 0;
     border-top: 1px solid #ddd;
+
     &__text {
         font-size: 13px;
         line-height: 24px;
         color: #333;
         letter-spacing: -0.9px;
     }
+
     &__logo {
         max-width: 90px;
         margin-bottom: 8px;
     }
+
     .text-right-sm {
         @include breakpoint(sm) {
             text-align: right;
         }
+    }
+
+    &.pinned {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
     }
 }
